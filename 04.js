@@ -13,9 +13,26 @@ function numeroSimetrico(num) {
   // numeroSimetrico(11711) devuelve true
 
   // Tu código:
-
+  var b=num.toString();
+  var c=b.length%2;
+  if(c==0){
+  var bandera=true;
+  for(var aux=0;aux<b.length/2;aux++){
+  if(b[aux]!==b[b.length-(1+aux)]){
+      bandera=false;
+  }
+  }
+  return bandera;
+  } else if(c!==0){
+  var bandera=true;
+  for(var aux=0;aux<Math.floor(b.length/2);aux++){
+      if(b[aux]!==b[b.length-(1+aux)]){
+          bandera=false;
+      }    
+  }
+  return bandera;
+  }
 }
-
 // No modifiques nada debajo de esta linea //
 
 module.exports = numeroSimetrico
